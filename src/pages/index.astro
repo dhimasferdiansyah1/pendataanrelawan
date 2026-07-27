@@ -1,11 +1,41 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+// index.astro – Public form page, no navbar
+import Layout from "../layouts/Layout.astro";
+import FormRelawan from "../components/FormRelawan.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+export const prerender = false;
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Pendataan Relawan | Dapur SPPG Pahlawan - Absensi Online BGN">
+  <main
+    class="min-h-screen flex flex-col items-center justify-center px-4 py-12 bg-slate-50"
+  >
+    <!-- Logo -->
+    <div class="mb-8 flex flex-col items-center gap-2">
+      <img
+        src="/bgn.png"
+        alt="Logo Dapur SPPG Pahlawan"
+        class="h-16 w-auto object-contain"
+      />
+      <p class="text-xs text-slate-500 font-medium tracking-wide">
+        Pendataan Data Absensi Online Relawan
+      </p>
+      <p class="text-xs text-slate-500 font-medium tracking-wide">
+        SPPG Pahlawan
+      </p>
+    </div>
+
+    <!-- Form Card -->
+    <FormRelawan />
+
+    <!-- Login Admin link – subtle text below the form -->
+    <div class="mt-8 text-center">
+      <a
+        href="/admin"
+        class="text-xs text-slate-400 hover:text-slate-700 transition-colors font-medium underline underline-offset-4"
+      >
+        Login Admin
+      </a>
+    </div>
+  </main>
 </Layout>

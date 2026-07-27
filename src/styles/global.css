@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: #f8fafc;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom Shadcn UI inspired styling utilities */
+.shadcn-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+}
+
+.shadcn-input {
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #0f172a;
+  transition: all 0.15s ease-in-out;
+}
+
+.shadcn-input:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-color: #0f172a;
+  box-shadow: 0 0 0 2px #0f172a;
+}
+
+.shadcn-input::placeholder {
+  color: #94a3b8;
+}
+
+.shadcn-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  height: 2.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  background-color: #0f172a;
+  color: #ffffff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: background-color 0.15s ease-in-out, transform 0.1s ease;
+  cursor: pointer;
+}
+
+.shadcn-button:hover {
+  background-color: #1e293b;
+}
+
+.shadcn-button:active {
+  transform: scale(0.98);
+}
+
+/* Date input – style native icon only, hide custom workaround */
+input[type="date"] {
+  cursor: pointer;
+  /* Remove default appearance to normalize across browsers */
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+}
+
+/* Style the native calendar picker icon to match the design */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.45;
+  padding: 2px;
+  border-radius: 4px;
+  transition: opacity 0.15s;
+  /* Reset default sizing */
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 0.8;
+}
+
+/* date-input helper class — no extra right padding since there's only the native icon */
+.date-input {
+  padding-right: 0.5rem;
+}
+
