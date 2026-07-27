@@ -8,9 +8,9 @@ export const relawan = pgTable('relawan', {
   jabatan: varchar('jabatan', { length: 100 }).notNull(),
   jenisKelamin: varchar('jenis_kelamin', { length: 20 }).notNull(),
   nomorHp: varchar('nomor_hp', { length: 30 }).notNull(),
-  alamatLengkap: text('alamat_lengkap').notNull(),
-  tempatLahir: varchar('tempat_lahir', { length: 100 }).notNull(),
-  tanggalLahir: varchar('tanggal_lahir', { length: 20 }).notNull(),
+  alamatLengkap: text('alamat_lengkap'),
+  tempatLahir: varchar('tempat_lahir', { length: 100 }),
+  tanggalLahir: varchar('tanggal_lahir', { length: 20 }),
   createdAt: timestamp('created_at').defaultNow().notNull(),
 });
 

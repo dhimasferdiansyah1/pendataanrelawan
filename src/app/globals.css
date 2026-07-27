@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Shadcn-like input */
+.shadcn-input {
+  display: block;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+  background-color: white;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #0f172a;
+  transition: all 0.15s ease;
+}
+.shadcn-input::placeholder {
+  color: #94a3b8;
+}
+.shadcn-input:focus {
+  outline: none;
+  border-color: #0f172a;
+  box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.08);
+}
+.shadcn-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Shadcn-like button */
+.shadcn-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  background-color: #0f172a;
+  color: white;
+  padding: 0.5rem 1rem;
+  height: 2.25rem;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  border: none;
+}
+.shadcn-button:hover {
+  background-color: #1e293b;
+}
+.shadcn-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Date input fix */
+input[type="date"] {
+  color-scheme: light;
+}
